@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a reservation</title>
+    <title>Delete reservation</title>
     <style>
         /* Kolory */
         :root {
@@ -33,20 +33,19 @@
             box-shadow: 0px 0px 5px 0px var(--light-powder-color);
         }
 
-        form select, form input, form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid var(--light-powder-color);
-            border-radius: 5px;
+        p {
+            margin-bottom: 20px;
         }
 
         form button {
+            padding: 10px 20px;
+            border: 1px solid var(--light-powder-color);
+            border-radius: 5px;
             background-color: var(--light-powder-color);
             color: var(--white-color);
-            border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-decoration: none;
         }
 
         form button:hover {
@@ -57,10 +56,10 @@
         a {
             color: var(--light-powder-color);
             text-decoration: none;
-            padding: 5px 10px;
-            border: 1px solid var(--light-powder-color);
             display: inline-block;
-            margin-top: 10px;
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: 1px solid var(--light-powder-color);
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -73,17 +72,13 @@
     </style>
 </head>
 <body>
-<h1>Add new appointment</h1>
+<h1>Delete reservation</h1>
 <div>
-    <form:form method="post" modelAttribute="reservations">
-        Customer: <form:select path="customer"  items="${customer}" itemValue="customerId" itemLabel="name"/><br/>
-        Service: <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName" /><br/>
-        Appointment: <form:input type="datetime-local" path="appointment"/><br/>
-        <form:button>Add</form:button>
+    <form:form method="post" modelAttribute="reservation">
+        <p>Do you want to delete ${reservation.customer.name}?</p>
+        <form:button>Yes</form:button>
+        <form:button><a href="/reservations">No</a></form:button>
     </form:form>
-    <div>
-        <a href="/reservations">Back to list</a>
-    </div>
 </div>
 </body>
 </html>

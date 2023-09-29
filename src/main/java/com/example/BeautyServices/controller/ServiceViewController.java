@@ -68,9 +68,7 @@ public class ServiceViewController {
     @PostMapping("/delete")
     public String deleteService(@RequestParam Long id){
         Optional<Service> serviceOptional = repository.findById(id);
-        if (serviceOptional.isPresent()){
-            repository.delete(serviceOptional.get());
-        }
+        serviceOptional.ifPresent(repository::delete);
         return "redirect:/services";
     }
 }

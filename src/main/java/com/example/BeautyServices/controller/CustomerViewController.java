@@ -30,7 +30,7 @@ public class CustomerViewController {
     }
 
     @PostMapping("/add")
-    public String addCustomer(@Valid Customer customer){
+    public String addCustomer(Customer customer){
         repository.save(customer);
         return "redirect:/customers";
     }
@@ -42,12 +42,11 @@ public class CustomerViewController {
     }
 
     @PostMapping("edit")
-    public String editCustomer(@Valid Customer customer, @RequestParam Long id) {
+    public String editCustomer(Customer customer, @RequestParam Long id) {
         Optional<Customer> customerOptional = repository.findById(id);
         if (customerOptional.isPresent()) {
             Customer newCustomer = customerOptional.get();
-            newCustomer.setFirstName(customer.getFirstName());
-            newCustomer.setLastName(customer.getLastName());
+            newCustomer.setName(customer.getName());
             newCustomer.setMobileNumber(customer.getMobileNumber());
             newCustomer.setEmail(customer.getEmail());
             repository.save(newCustomer);
@@ -64,9 +63,7 @@ public class CustomerViewController {
     @PostMapping("/delete")
     public String deleteCustomer(@RequestParam Long id){
         Optional<Customer> customerOptional = repository.findById(id);
-        if (customerOptional.isPresent()){
-            repository.delete(customerOptional.get());
-        }
+        customerOptional.ifPresent(repository::delete);
         return "redirect:/customers";
     }
 }

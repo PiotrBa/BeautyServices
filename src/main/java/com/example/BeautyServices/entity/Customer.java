@@ -14,14 +14,8 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reservationId;
-    private String firstName;
-    private String lastName;
+    private Long customerId;
+    private String name;
     private String mobileNumber;
     private String email;
-
-
-
-
-
 }
