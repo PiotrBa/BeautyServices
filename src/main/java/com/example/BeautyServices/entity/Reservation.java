@@ -32,8 +32,6 @@ public class Reservation {
     private LocalDateTime appointment;
 
     @Column(updatable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime createReservation;
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime updateReservation;
 }

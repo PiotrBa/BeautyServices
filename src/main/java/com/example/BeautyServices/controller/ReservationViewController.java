@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -26,6 +28,9 @@ public class ReservationViewController {
     private final ReservationRepository reservationRepository;
     private final CustomerRepository customerRepository;
     private final ServiceRepository serviceRepository;
+
+
+
 
 
     @GetMapping()
@@ -46,7 +51,10 @@ public class ReservationViewController {
 
     @PostMapping("/add")
     public String addReservation(Reservation reservation){
-        reservation.setCreateReservation(LocalDateTime.now());
+        LocalDateTime dateTimeNow = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy HH:mm");
+        String textDate = formatter.format(dateTimeNow);
+        reservation.setCreateReservation(LocalDateTime.parse(textDate, formatter));
         reservationRepository.save(reservation);
         return "redirect:/reservations";
     }
@@ -67,10 +75,14 @@ public class ReservationViewController {
     public String editReservation(Reservation reservation, @RequestParam Long id) {
         Optional<Reservation> reservationOptional = reservationRepository.findById(id);
         if (reservationOptional.isPresent()) {
+            LocalDateTime dateTimeNow = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy HH:mm");
+            String textDate = formatter.format(dateTimeNow);
+
             Reservation newReservation = reservationOptional.get();
             newReservation.setServiceList(reservation.getServiceList());
             newReservation.setAppointment(reservation.getAppointment());
-            newReservation.setUpdateReservation(LocalDateTime.now());
+            newReservation.setUpdateReservation(LocalDateTime.parse(textDate, formatter));
             reservationRepository.save(newReservation);
         }
         return "redirect:/reservations";
