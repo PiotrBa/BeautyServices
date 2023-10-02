@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,14 @@ public class Reservation {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime appointment;
+
+
+    public String getDateTimeReservationFormatted(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd MM yyyy");
+        String format = formatter.format(createReservation);
+        return format;
+    }
+
 
     @Column(updatable = false)
     private LocalDateTime createReservation;

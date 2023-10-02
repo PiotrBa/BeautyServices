@@ -33,7 +33,7 @@
                     </ul>
                 </td>
                 <td>${reservation.appointment}</td>
-                <td>${reservation.createReservation}</td>
+                <td>${reservation.createReservationFormatted}</td>
                 <td>${reservation.updateReservation}</td>
                 <td>
                     <a href="/reservations/edit?id=${reservation.reservationId}">Edit</a><br/>

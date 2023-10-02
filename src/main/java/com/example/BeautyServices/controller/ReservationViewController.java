@@ -13,9 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -52,9 +50,7 @@ public class ReservationViewController {
     @PostMapping("/add")
     public String addReservation(Reservation reservation){
         LocalDateTime dateTimeNow = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy HH:mm");
-        String textDate = formatter.format(dateTimeNow);
-        reservation.setCreateReservation(LocalDateTime.parse(textDate, formatter));
+        reservation.setCreateReservation(dateTimeNow);
         reservationRepository.save(reservation);
         return "redirect:/reservations";
     }
@@ -76,13 +72,11 @@ public class ReservationViewController {
         Optional<Reservation> reservationOptional = reservationRepository.findById(id);
         if (reservationOptional.isPresent()) {
             LocalDateTime dateTimeNow = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy HH:mm");
-            String textDate = formatter.format(dateTimeNow);
 
             Reservation newReservation = reservationOptional.get();
             newReservation.setServiceList(reservation.getServiceList());
             newReservation.setAppointment(reservation.getAppointment());
-            newReservation.setUpdateReservation(LocalDateTime.parse(textDate, formatter));
+            newReservation.setUpdateReservation(dateTimeNow);
             reservationRepository.save(newReservation);
         }
         return "redirect:/reservations";
