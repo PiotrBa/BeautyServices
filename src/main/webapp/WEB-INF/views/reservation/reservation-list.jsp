@@ -34,7 +34,7 @@
                 </td>
                 <td>${reservation.appointment}</td>
                 <td>${reservation.createReservationFormatted}</td>
-                <td>${reservation.updateReservation}</td>
+                <td>${reservation.updateReservationFormatted}</td>
                 <td>
                     <a href="/reservations/edit?id=${reservation.reservationId}">Edit</a><br/>
                     <a href="/reservations/delete?id=${reservation.reservationId}">Delete</a>
@@ -48,3 +48,4 @@
 </div>
 </body>
 </html>
+

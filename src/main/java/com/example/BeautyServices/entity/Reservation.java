@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -33,14 +34,29 @@ public class Reservation {
     private LocalDateTime appointment;
 
 
-    public String getDateTimeReservationFormatted(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd MM yyyy");
-        String format = formatter.format(createReservation);
-        return format;
-    }
+
 
 
     @Column(updatable = false)
     private LocalDateTime createReservation;
+
+    //I was getting nullPointerException, so I had to do this.
+    public String getCreateReservationFormatted(){
+        if(createReservation == null) {
+            return "Not available";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm | dd/MM/yyyy");
+        return formatter.format(createReservation);
+    }
+
     private LocalDateTime updateReservation;
+
+    //I was getting nullPointerException, so I had to do this.
+    public String getUpdateReservationFormatted(){
+        if(updateReservation == null) {
+            return "Not updated";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm | dd/MM/yyyy");
+        return formatter.format(updateReservation);
+    }
 }
