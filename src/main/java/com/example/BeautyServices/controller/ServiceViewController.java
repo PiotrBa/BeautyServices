@@ -62,7 +62,7 @@ public class ServiceViewController {
     @GetMapping("/delete")
     public String deleteServiceView(Model model, @RequestParam Long id){
         model.addAttribute("services", repository.findById(id));
-        return "service/service-delete";
+        return "/service/service-delete";
     }
 
     @PostMapping("/delete")

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -57,7 +56,7 @@ public class CustomerViewController {
     @GetMapping("/delete")
     public String deleteCustomerView(Model model, @RequestParam Long id){
         model.addAttribute("customers", repository.findById(id));
-        return "customer/customer-delete";
+        return "/customer/customer-delete";
     }
 
     @PostMapping("/delete")
