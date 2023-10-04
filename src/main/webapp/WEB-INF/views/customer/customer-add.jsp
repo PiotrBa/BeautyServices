@@ -15,6 +15,10 @@
         <form:input path="name"/>
     </div>
     <div class="input-container">
+        <label for="username">User name:</label>
+        <form:input path="username"/>
+    </div>
+    <div class="input-container">
         <label for="mobileNumber">Mobile number:</label>
         <form:input path="mobileNumber"/>
     </div>
@@ -22,6 +26,11 @@
         <label for="email">Email:</label>
         <form:input path="email"/>
     </div>
+    <div class="input-container">
+        <label for="password">Password:</label>
+        <form:input path="password"/>
+    </div>
+
 
     <form:button>Add</form:button>
 </form:form><br>

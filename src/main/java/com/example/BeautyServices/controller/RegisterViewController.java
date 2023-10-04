@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @AllArgsConstructor
 @RequestMapping("/register")
-public class CustomerSecurityController {
+public class RegisterViewController {
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -29,7 +29,7 @@ public class CustomerSecurityController {
        customer.setRole("USER");
        customer.setActive(true);
        customerRepository.save(customer);
-       return "/reservations";
+       return "redirect:/reservations";
     }
 
 }

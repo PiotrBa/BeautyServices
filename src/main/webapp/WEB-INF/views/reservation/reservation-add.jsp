@@ -18,7 +18,7 @@
         </div>
         <div class="input-container">
             <label for="serviceList">Service:</label>
-            <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName" />
+            <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/>
         </div>
         <div class="input-container">
             <label for="appointment">Appointment:</label>

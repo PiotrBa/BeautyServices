@@ -8,7 +8,8 @@
 <body>
 <form method="post" action="/login">
     User name: <input type="text" name="username"/> Password: <input type="password" name="password"/>
-    <button type="submit">Login</button>
+    <button type="submit">Login</button><br/>
+    <a href="/security/register">Register</a>
 </form>
 </body>
 </html>

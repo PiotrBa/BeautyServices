@@ -3,6 +3,7 @@ package com.example.BeautyServices.controller;
 import com.example.BeautyServices.entity.Customer;
 import com.example.BeautyServices.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CustomerViewController {
     private final CustomerRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
 
     @GetMapping()
@@ -30,6 +32,9 @@ public class CustomerViewController {
 
     @PostMapping("/add")
     public String addCustomer(Customer customer){
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+        customer.setRole("USER");
+        customer.setActive(true);
         repository.save(customer);
         return "redirect:/customers";
     }
