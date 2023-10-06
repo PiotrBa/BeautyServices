@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration</title>
+    <title>Registration Admin</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 
 </head>
 <body>
-<h1>User registration</h1>
-<form:form method="post" modelAttribute="user">
+<h1>Admin registration</h1>
+<form:form method="post" modelAttribute="admin">
     <div>
         First name and Last name: <form:input path="name"/><form:errors path="name"/>
     </div>

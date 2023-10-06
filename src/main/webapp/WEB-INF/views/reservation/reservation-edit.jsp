@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Edit reservation</title>
-    <link rel="stylesheet" type="text/css" href="/style-edit.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
 <h1>Edit your appointment</h1>

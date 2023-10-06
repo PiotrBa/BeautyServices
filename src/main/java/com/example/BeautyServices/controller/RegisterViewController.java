@@ -17,19 +17,35 @@ public class RegisterViewController {
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping()
+    @GetMapping("/customer")
     public String registerCustomerView(Model model){
         model.addAttribute("user", new Customer());
         return "/security/register";
     }
 
-    @PostMapping()
+    @PostMapping("/customer")
     public String registerCustomer(Customer customer){
        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
-       customer.setRole("USER");
+       customer.setRole("ROLE_USER");
        customer.setActive(true);
        customerRepository.save(customer);
-       return "redirect:/reservations";
+       return "redirect:/login";
+    }
+
+    @GetMapping("/admin")
+    public String registerAdminView(Model model){
+        model.addAttribute("admin", new Customer());
+        return "/security/register-admin";
+    }
+
+    @PostMapping("/admin")
+    public String registerAdmin(Customer customer){
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+        customer.setRole("ROLE_ADMIN");
+        customer.setActive(true);
+        customerRepository.save(customer);
+        return "redirect:/login";
     }
 
 }
+

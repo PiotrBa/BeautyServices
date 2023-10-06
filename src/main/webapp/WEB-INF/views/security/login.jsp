@@ -4,12 +4,17 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
 <form method="post" action="/login">
     User name: <input type="text" name="username"/> Password: <input type="password" name="password"/>
     <button type="submit">Login</button><br/>
-    <a href="/security/register">Register</a>
+    <br>
+    <a href="/register/customer">Register</a><br>
+    <br>
+    <a href="/register/admin">Register admin</a>
+
 </form>
 </body>
 </html>

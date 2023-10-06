@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Delete service</title>
-    <link rel="stylesheet" type="text/css" href="/style-delete.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-delete.css" />
 </head>
 <body>
 <h1>Delete service</h1>

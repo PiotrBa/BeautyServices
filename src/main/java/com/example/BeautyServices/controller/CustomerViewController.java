@@ -33,7 +33,7 @@ public class CustomerViewController {
     @PostMapping("/add")
     public String addCustomer(Customer customer){
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
-        customer.setRole("USER");
+        customer.setRole("ROLE_USER");
         customer.setActive(true);
         repository.save(customer);
         return "redirect:/customers";

@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>List of reservations</title>
-    <link rel="stylesheet" type="text/css" href="/style-list.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-list.css" />
 
 </head>
 <body>

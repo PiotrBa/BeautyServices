@@ -4,6 +4,8 @@
 <html>
 <head>
     <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="/css/style-delete.css" />
+
 </head>
 <body>
 <form method="post" action="/logout">

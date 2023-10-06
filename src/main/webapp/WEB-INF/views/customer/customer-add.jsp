@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Add a customer</title>
-    <link rel="stylesheet" type="text/css" href="/style-add.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
 <h1>Add customer</h1>

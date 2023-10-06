@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Edit service</title>
-    <link rel="stylesheet" type="text/css" href="/style-edit.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
 <h1>Edit service</h1>
