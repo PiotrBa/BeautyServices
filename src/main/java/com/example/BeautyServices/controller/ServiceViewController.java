@@ -18,8 +18,6 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ServiceViewController {
     private final ServiceRepository repository;
-    private final ServiceList serviceList;
-
 
     @GetMapping()
     public String getListView(Model model) {

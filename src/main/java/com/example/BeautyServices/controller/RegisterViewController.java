@@ -46,6 +46,5 @@ public class RegisterViewController {
         customerRepository.save(customer);
         return "redirect:/login";
     }
-
 }
 

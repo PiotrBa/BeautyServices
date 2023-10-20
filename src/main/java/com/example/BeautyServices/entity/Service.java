@@ -1,7 +1,6 @@
 package com.example.BeautyServices.entity;
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +10,6 @@ import javax.persistence.*;
 @ToString
 public class Service {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceId;
@@ -19,6 +17,5 @@ public class Service {
     private double price;
     private int serviceDuration;
     private String serviceDescription;
-
 }
 

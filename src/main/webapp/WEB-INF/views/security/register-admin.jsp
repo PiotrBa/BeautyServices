@@ -29,6 +29,12 @@
     <div>
         <form:button>Register</form:button>
     </div>
+    <br>
+    <div>
+        <a href="/homepage">Back</a>
+    </div>
+
 </form:form>
+
 </body>
 </html>

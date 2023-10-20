@@ -21,15 +21,9 @@ import java.util.Optional;
 @RequestMapping("/reservations")
 @AllArgsConstructor
 public class ReservationViewController {
-
-
     private final ReservationRepository reservationRepository;
     private final CustomerRepository customerRepository;
     private final ServiceRepository serviceRepository;
-
-
-
-
 
     @GetMapping()
     public String getListView(Model model) {
@@ -40,7 +34,7 @@ public class ReservationViewController {
     }
 
     @GetMapping("/add")
-    public String addReservationView(Model model){
+    public String addReservationView(Model model) {
         model.addAttribute("reservations", new Reservation());
         model.addAttribute("customer", customerRepository.findAll());
         model.addAttribute("serviceList", serviceRepository.findAll());
@@ -48,7 +42,7 @@ public class ReservationViewController {
     }
 
     @PostMapping("/add")
-    public String addReservation(Reservation reservation){
+    public String addReservation(Reservation reservation) {
         LocalDateTime dateTimeNow = LocalDateTime.now();
         reservation.setCreateReservation(dateTimeNow);
         reservationRepository.save(reservation);
@@ -57,15 +51,14 @@ public class ReservationViewController {
 
     @GetMapping("/edit")
     public String editReservationView(@RequestParam Long id, Model model) {
-    Optional<Reservation> reservationOptional = reservationRepository.findById(id);
-    if (reservationOptional.isPresent()) {
-        model.addAttribute("reservations", reservationOptional.get());
-        model.addAttribute("customer", reservationOptional.get().getCustomer());
+        Optional<Reservation> reservationOptional = reservationRepository.findById(id);
+        if (reservationOptional.isPresent()) {
+            model.addAttribute("reservations", reservationOptional.get());
+            model.addAttribute("customer", reservationOptional.get().getCustomer());
+        }
+        model.addAttribute("serviceList", serviceRepository.findAll());
+        return "/reservation/reservation-edit";
     }
-    model.addAttribute("serviceList", serviceRepository.findAll());
-    return "/reservation/reservation-edit";
-    }
-
 
     @PostMapping("/edit")
     public String editReservation(Reservation reservation, @RequestParam Long id) {
@@ -83,16 +76,15 @@ public class ReservationViewController {
     }
 
     @GetMapping("/delete")
-    public String deleteReservationView(@RequestParam Long id, Model model){
+    public String deleteReservationView(@RequestParam Long id, Model model) {
         model.addAttribute("reservation", reservationRepository.findById(id).get());
         return "/reservation/reservation-delete";
     }
 
     @PostMapping("/delete")
-    public String deleteReservation(@RequestParam Long id){
+    public String deleteReservation(@RequestParam Long id) {
         Optional<Reservation> reservationOptional = reservationRepository.findById(id);
         reservationOptional.ifPresent(reservationRepository::delete);
         return "redirect:/reservations";
     }
-
 }

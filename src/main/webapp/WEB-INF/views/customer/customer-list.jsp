@@ -30,6 +30,7 @@
         </c:forEach>
     </table>
     <a class="add-btn" href="customers/add">Add New Customer</a>
+    <a href="/logout">Logout</a>
 </div>
 </body>
 </html>

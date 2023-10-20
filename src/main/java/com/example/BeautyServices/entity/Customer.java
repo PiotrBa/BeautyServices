@@ -1,7 +1,6 @@
 package com.example.BeautyServices.entity;
 
 import lombok.*;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -30,5 +29,4 @@ public class Customer {
     private String role;
     @Column(nullable = false)
     private Boolean active;
-
 }

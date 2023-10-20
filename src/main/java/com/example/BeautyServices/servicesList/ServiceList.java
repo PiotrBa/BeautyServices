@@ -12,7 +12,6 @@ import java.util.List;
 @Component
 @AllArgsConstructor
 public class ServiceList implements CommandLineRunner {
-
     private final ServiceRepository serviceRepository;
 
     @Override
@@ -29,7 +28,6 @@ public class ServiceList implements CommandLineRunner {
                 new Service(9L,"Nail Repair", 10.0, 15, "Nail repair"),
                 new Service(10L,"Nail Polish Change", 15.0, 15, "Nail polish change")
         );
-
         serviceRepository.saveAll(nailServices);
     }
 }
