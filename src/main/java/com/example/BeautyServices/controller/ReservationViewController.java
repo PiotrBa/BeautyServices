@@ -2,17 +2,13 @@ package com.example.BeautyServices.controller;
 
 
 import com.example.BeautyServices.entity.Reservation;
-
-
 import com.example.BeautyServices.repository.CustomerRepository;
 import com.example.BeautyServices.repository.ReservationRepository;
 import com.example.BeautyServices.repository.ServiceRepository;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
 import java.util.Optional;
 
