@@ -48,8 +48,8 @@
     <div>
         <a href="/reservations/add">Add new appointment</a>
         <sec:authorize access="hasRole('ADMIN')">
-        <a href="/customers/list">Customers</a>
-        <a href="/services/list">Services</a>
+        <a href="/customers">Customers</a>
+        <a href="/services">Services</a>
         </sec:authorize>
         <a href="/logout">Logout</a>
     </div>

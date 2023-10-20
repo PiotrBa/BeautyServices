@@ -29,7 +29,9 @@
             </tr>
         </c:forEach>
     </table>
-    <a class="add-btn" href="customers/add">Add New Customer</a>
+    <a href="customers/add">Add New Customer</a>
+    <a href="/reservations">Appointments</a>
+    <a href="/services">Services</a>
     <a href="/logout">Logout</a>
 </div>
 </body>
