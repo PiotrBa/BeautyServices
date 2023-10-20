@@ -24,7 +24,6 @@ public class ReservationViewController {
     @GetMapping()
     public String getListView(Model model) {
         model.addAttribute("reservations", reservationRepository.findAll());
-        model.addAttribute("customers", customerRepository.findAll());
         model.addAttribute("services", serviceRepository.findAll());
         return "/reservation/reservation-list";
     }
@@ -79,7 +78,10 @@ public class ReservationViewController {
     @PostMapping("/delete")
     public String deleteReservation(@RequestParam Long id) {
         Optional<Reservation> reservationOptional = reservationRepository.findById(id);
-        reservationOptional.ifPresent(reservationRepository::delete);
+        if(reservationOptional.isPresent()){
+            Reservation reservation = reservationOptional.get();
+            reservationRepository.delete(reservation);
+        }
         return "redirect:/reservations";
     }
 }

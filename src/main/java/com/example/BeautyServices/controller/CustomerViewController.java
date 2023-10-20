@@ -1,6 +1,7 @@
 package com.example.BeautyServices.controller;
 
 import com.example.BeautyServices.entity.Customer;
+import com.example.BeautyServices.entity.Reservation;
 import com.example.BeautyServices.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -66,7 +67,10 @@ public class CustomerViewController {
     @PostMapping("/delete")
     public String deleteCustomer(@RequestParam Long id){
         Optional<Customer> customerOptional = repository.findById(id);
-        customerOptional.ifPresent(repository::delete);
+        if(customerOptional.isPresent()){
+            Customer customer = customerOptional.get();
+            repository.delete(customer);
+        }
         return "redirect:/customers";
     }
 }

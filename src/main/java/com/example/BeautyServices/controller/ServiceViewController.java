@@ -15,11 +15,11 @@ import java.util.Optional;
 @RequestMapping("/services")
 @AllArgsConstructor
 public class ServiceViewController {
-    private final ServiceRepository repository;
+    private final ServiceRepository serviceRepository;
 
     @GetMapping()
     public String getListView(Model model) {
-        model.addAttribute("services", repository.findAll());
+        model.addAttribute("services", serviceRepository.findAll());
         return "/service/service-list";
     }
 
@@ -31,40 +31,43 @@ public class ServiceViewController {
 
     @PostMapping("/add")
     public String addService(Service service){
-        repository.save(service);
+        serviceRepository.save(service);
         return "redirect:/services";
     }
 
     @GetMapping("/edit")
     public String editServiceView(Model model, @RequestParam Long id){
-        model.addAttribute("services", repository.findById(id));
+        model.addAttribute("services", serviceRepository.findById(id));
         return "/service/service-edit";
     }
 
     @PostMapping("edit")
     public String editService(@RequestParam Long id, Service service){
-        Optional<Service> serviceOptional = repository.findById(id);
+        Optional<Service> serviceOptional = serviceRepository.findById(id);
         if (serviceOptional.isPresent()) {
             Service newService = serviceOptional.get();
             newService.setServiceName(service.getServiceName());
             newService.setPrice(service.getPrice());
             newService.setServiceDuration(service.getServiceDuration());
             newService.setServiceDescription(service.getServiceDescription());
-            repository.save(newService);
+            serviceRepository.save(newService);
         }
         return "redirect:/services";
     }
 
     @GetMapping("/delete")
     public String deleteServiceView(Model model, @RequestParam Long id){
-        model.addAttribute("services", repository.findById(id));
+        model.addAttribute("services", serviceRepository.findById(id));
         return "/service/service-delete";
     }
 
     @PostMapping("/delete")
     public String deleteService(@RequestParam Long id){
-        Optional<Service> serviceOptional = repository.findById(id);
-        serviceOptional.ifPresent(repository::delete);
+        Optional<Service> serviceOptional = serviceRepository.findById(id);
+        if(serviceOptional.isPresent()){
+            Service service = serviceOptional.get();
+            serviceRepository.delete(service);
+        }
         return "redirect:/services";
     }
 }
