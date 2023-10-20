@@ -51,8 +51,8 @@ public class ReservationViewController {
         if (reservationOptional.isPresent()) {
             model.addAttribute("reservations", reservationOptional.get());
             model.addAttribute("customer", reservationOptional.get().getCustomer());
+            model.addAttribute("serviceList", serviceRepository.findAll());
         }
-        model.addAttribute("serviceList", serviceRepository.findAll());
         return "/reservation/reservation-edit";
     }
 
@@ -61,7 +61,6 @@ public class ReservationViewController {
         Optional<Reservation> reservationOptional = reservationRepository.findById(id);
         if (reservationOptional.isPresent()) {
             LocalDateTime dateTimeNow = LocalDateTime.now();
-
             Reservation newReservation = reservationOptional.get();
             newReservation.setServiceList(reservation.getServiceList());
             newReservation.setAppointment(reservation.getAppointment());
