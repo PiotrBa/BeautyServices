@@ -23,7 +23,7 @@ public class HomePageViewController {
     public String showAppointments(Model model, Principal principal){
         String userName = principal.getName();
         Customer customer = customerRepository.getByUsername(userName);
-        List<Reservation> reservation = reservationRepository.findByCustomerName(customer.getUsername());
+        List<Reservation> reservation = reservationRepository.findByCustomerName(customer.getName());
         model.addAttribute("reservation", reservation);
         model.addAttribute("customer", customer);
         return "/homepage";
