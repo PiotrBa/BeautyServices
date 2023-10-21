@@ -60,7 +60,10 @@ public class CustomerViewController {
 
     @GetMapping("/delete")
     public String deleteCustomerView(Model model, @RequestParam Long id){
-        model.addAttribute("customers", repository.findById(id));
+        Optional<Customer> customerOptional = repository.findById(id);
+        if(customerOptional.isPresent()) {
+            model.addAttribute("customers", customerOptional.get());
+        }
         return "/customer/customer-delete";
     }
 

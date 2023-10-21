@@ -71,7 +71,11 @@ public class ReservationViewController {
 
     @GetMapping("/delete")
     public String deleteReservationView(@RequestParam Long id, Model model) {
-        model.addAttribute("reservation", reservationRepository.findById(id).get());
+        Optional<Reservation> reservationOptional = reservationRepository.findById(id);
+        if (reservationOptional.isPresent()){
+            model.addAttribute("reservation", reservationOptional.get());
+        }
+
         return "/reservation/reservation-delete";
     }
 

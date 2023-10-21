@@ -57,7 +57,10 @@ public class ServiceViewController {
 
     @GetMapping("/delete")
     public String deleteServiceView(Model model, @RequestParam Long id){
-        model.addAttribute("services", serviceRepository.findById(id));
+        Optional<Service> serviceOptional = serviceRepository.findById(id);
+        if(serviceOptional.isPresent()) {
+            model.addAttribute("services", serviceOptional.get());
+        }
         return "/service/service-delete";
     }
 
