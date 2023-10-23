@@ -16,6 +16,7 @@
             <th>Customer</th>
             <th>Service</th>
             <th>Appointment</th>
+            <th>Actions</th>
         </tr>
         <c:forEach items="${reservation}" var="reservation">
             <tr>
