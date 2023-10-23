@@ -12,9 +12,6 @@
     <button type="submit">Login</button><br/>
     <br>
     <a href="/register/customer">Register</a><br>
-    <br>
-    <a href="/register/admin">Register admin</a>
-
 </form>
 </body>
 </html>

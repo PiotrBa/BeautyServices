@@ -30,14 +30,14 @@
                 </td>
                 <td>${reservation.appointment}</td>
                 <td>
-                    <a href="/reservations/edit?id=${reservation.reservationId}">Edit</a><br/>
-                    <a href="/reservations/delete?id=${reservation.reservationId}">Delete</a>
+                    <a href="/homepage/edit?id=${reservation.reservationId}">Edit</a><br/>
+                    <a href="/homepage/delete?id=${reservation.reservationId}">Delete</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
     <div>
-        <a href="/reservations/add">Add new appointment</a>
+        <a href="/homepage/add">Add new appointment</a>
         <a href="/logout">Logout</a>
 
     </div>

@@ -17,10 +17,8 @@
             <th>Customer</th>
             <th>Service</th>
             <th>Appointment</th>
-            <sec:authorize access="hasRole('ADMIN')">
             <th>Create</th>
             <th>Update</th>
-            </sec:authorize>
             <th>Actions</th>
         </tr>
         <c:forEach items="${reservations}" var="reservation">
@@ -34,10 +32,8 @@
                     </ul>
                 </td>
                 <td>${reservation.appointment}</td>
-                <sec:authorize access="hasRole('ADMIN')">
                 <td>${reservation.createReservationFormatted}</td>
                 <td>${reservation.updateReservationFormatted}</td>
-                </sec:authorize>
                 <td>
                     <a href="/reservations/edit?id=${reservation.reservationId}">Edit</a><br/>
                     <a href="/reservations/delete?id=${reservation.reservationId}">Delete</a>
@@ -47,11 +43,11 @@
     </table>
     <div>
         <a href="/reservations/add">Add new appointment</a>
-        <sec:authorize access="hasRole('ADMIN')">
         <a href="/customers">Customers</a>
         <a href="/services">Services</a>
-        </sec:authorize>
         <a href="/logout">Logout</a>
+        <br>
+        <a href="/register/admin">Register admin</a>
     </div>
 </div>
 </body>

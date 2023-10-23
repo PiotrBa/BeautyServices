@@ -19,12 +19,13 @@ public class SecurityConfig {
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests()
                 .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
-                .antMatchers("/homepage").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/reservations").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/reservations/add").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/reservations/edit").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/reservations/delete").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/homepage").hasRole("USER")
+                .antMatchers("/homepage/*").hasRole("USER")
+                .antMatchers("/reservations").hasRole("ADMIN")
+                .antMatchers("/reservations/*").hasRole("ADMIN")
+                .antMatchers( "/services").hasRole("ADMIN")
                 .antMatchers( "/services/*").hasRole("ADMIN")
+                .antMatchers("/customers").hasRole("ADMIN")
                 .antMatchers("/customers/*").hasRole("ADMIN")
 
                 .antMatchers("/register/customer").permitAll()

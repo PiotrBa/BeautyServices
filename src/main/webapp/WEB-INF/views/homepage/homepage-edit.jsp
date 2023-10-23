@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -18,7 +17,7 @@
         <form:button>Edit</form:button>
     </form:form>
     <div>
-        <a href="/reservations">Back to list</a>
+        <a href="/homepage">Back to list</a>
     </div>
 </div>
 </body>

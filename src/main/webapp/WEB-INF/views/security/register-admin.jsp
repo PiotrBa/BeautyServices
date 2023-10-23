@@ -31,7 +31,7 @@
     </div>
     <br>
     <div>
-        <a href="/homepage">Back</a>
+        <a href="/reservations">Back</a>
     </div>
 
 </form:form>
