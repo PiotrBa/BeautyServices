@@ -10,12 +10,16 @@
 </head>
 <body>
 <h1>Edit appointment</h1>
-<div>
+<div class="center">
     <form:form method="post" modelAttribute="reservations">
         <h2>${customer.name}</h2><br/>
-        Service: <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/><br/>
-        Appointment: <form:input type="datetime-local" path="appointment" pattern="yyyy-MM-dd'T'HH:mm"/><br/>
-        <form:button>Edit</form:button>
+        <div>
+            Service: <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/><br/>
+        </div>
+        <div>
+            Appointment: <form:input type="datetime-local" path="appointment" pattern="yyyy-MM-dd'T'HH:mm"/><br/>
+        </div>
+        <form:button class="btn">Edit</form:button>
     </form:form>
     <div>
         <a href="/reservations">Back to list</a>

@@ -30,11 +30,9 @@
         <form:button>Register</form:button>
     </div>
     <br>
-    <div>
-        <a href="/reservations">Back</a>
-    </div>
-
 </form:form>
-
+<div>
+    <a href="/reservations">Back</a>
+</div>
 </body>
 </html>

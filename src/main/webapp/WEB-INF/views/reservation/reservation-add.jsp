@@ -10,19 +10,16 @@
 </head>
 <body>
 <h1>Add new appointment</h1>
-<div>
+<div class="center">
     <form:form method="post" modelAttribute="reservations">
         <div class="input-container">
-            <label for="customer">Customer:</label>
-            <form:select path="customer"  items="${customer}" itemValue="customerId" itemLabel="name"/>
+            Customer: <form:select path="customer"  items="${customer}" itemValue="customerId" itemLabel="name"/>
         </div>
         <div class="input-container">
-            <label for="serviceList">Service:</label>
-            <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/>
+            Service:<form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/>
         </div>
         <div class="input-container">
-            <label for="appointment">Appointment:</label>
-            <form:input type="datetime-local" path="appointment"/>
+            Appointment:<form:input type="datetime-local" path="appointment"/>
         </div>
         <form:button>Add</form:button>
     </form:form>

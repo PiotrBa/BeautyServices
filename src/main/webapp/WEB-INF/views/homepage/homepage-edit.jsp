@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Edit appointment</h1>
-<div>
+<div class="center">
     <form:form method="post" modelAttribute="reservations">
         <h2>${customer.name}</h2><br/>
         Service: <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/><br/>

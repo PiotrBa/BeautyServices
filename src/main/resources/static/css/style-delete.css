@@ -14,8 +14,14 @@ h1 {
     padding: 10px;
     border-radius: 15px;
 }
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 form {
-    background-color: #F5F5DC;
+    background-color: #FFF3E0;
     padding: 20px;
     border-radius: 15px;
     width: 50%;

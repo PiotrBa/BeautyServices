@@ -11,7 +11,7 @@
     User name: <input type="text" name="username"/> Password: <input type="password" name="password"/>
     <button type="submit">Login</button><br/>
     <br>
-    <a href="/register/customer">Register</a><br>
 </form>
+<a href="/register/customer">Register</a><br>
 </body>
 </html>
