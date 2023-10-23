@@ -10,4 +10,5 @@ public class LoginViewController {
     public String getLoginView() {
         return "/security/login";
     }
+
 }
