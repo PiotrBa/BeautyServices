@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -16,11 +17,15 @@
             <h2>${customer.name}</h2><br/>
         </div>
         <div class="input-container">
-            <label for="serviceList">Service:</label>
-            <form:select path="serviceList" multiple="true" items="${serviceList}" itemValue="serviceId" itemLabel="serviceName"/>
+            <form:select class="frame" path="serviceList" multiple="true">
+                <c:forEach items="${serviceList}" var="service">
+                    <form:option value="${service.serviceId}">
+                        ${service.serviceName} - ${service.price}£ - ${service.serviceDuration} min
+                    </form:option>
+                </c:forEach>
+            </form:select>
         </div>
         <div class="input-container">
-            <label for="appointment">Appointment:</label>
             <form:input type="datetime-local" path="appointment"/>
         </div>
         <form:button>Add</form:button>

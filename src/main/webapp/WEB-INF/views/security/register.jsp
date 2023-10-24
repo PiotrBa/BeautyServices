@@ -26,13 +26,10 @@
     <div>
         Password: <form:password path="password"/><form:errors path="password"/>
     </div>
-    <div>
-        <form:button>Register</form:button>
-    </div>
-    <br>
-    <div>
-        <a href="/homepage">Back</a>
-    </div>
+    <form:button class="btn">Register</form:button>
 </form:form>
+<div>
+    <a href="/homepage">Back</a>
+</div>
 </body>
 </html>

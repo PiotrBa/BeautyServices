@@ -26,10 +26,7 @@
     <div>
         Password: <form:password path="password"/><form:errors path="password"/>
     </div>
-    <div>
-        <form:button>Register</form:button>
-    </div>
-    <br>
+    <form:button class="btn">Register</form:button>
 </form:form>
 <div>
     <a href="/reservations">Back</a>
