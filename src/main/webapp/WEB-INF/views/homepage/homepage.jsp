@@ -30,7 +30,7 @@
                     </ul>
                 </td>
                 <td>${reservation.getTotalPriceAndDuration()}</td>
-                <td>${reservation.appointment}</td>
+                <td>${reservation.createAppointmentFormatted}</td>
                 <td>
                     <a href="/homepage/edit?id=${reservation.reservationId}">Edit</a><br/>
                     <a href="/homepage/delete?id=${reservation.reservationId}">Delete</a>
