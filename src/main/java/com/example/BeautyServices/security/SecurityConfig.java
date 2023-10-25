@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .antMatchers("/customers/*").hasRole("ADMIN")
 
                 .antMatchers("/register/customer").permitAll()
-                .antMatchers("/register/admin").permitAll()
+                .antMatchers("/register/admin").hasRole("ADMIN")
                 .antMatchers("favicon.ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
