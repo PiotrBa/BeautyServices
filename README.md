@@ -33,5 +33,7 @@ To run the BeautyServices application on your local environment, follow these st
 3. Configure the database connection in the `application.properties` file.
 4. Run the application using the command `./mvnw spring-boot:run`.
 5. The application will be accessible at: http://localhost:8080/homepage
+6. Register and place an order :)
 
+The administrator is always in the system with the login: adam and password: 1234.
 After logging in, the application will recognize whether the user is a USER role or an ADMIN role and will redirect to the appropriate page.
