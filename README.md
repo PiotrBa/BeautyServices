@@ -34,4 +34,4 @@ To run the BeautyServices application on your local environment, follow these st
 4. Run the application using the command `./mvnw spring-boot:run`.
 5. The application will be accessible at: http://localhost:8080/homepage
 
-After logging in, the application will recognize whether the user is a USER or an ADMIN and will redirect to the appropriate page.
+After logging in, the application will recognize whether the user is a USER role or an ADMIN role and will redirect to the appropriate page.
