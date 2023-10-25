@@ -58,4 +58,25 @@ public class Reservation {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm | dd/MM/yyyy");
         return formatter.format(updateReservation);
     }
+
+    public double getTotalPrice() {
+        double totalPrice = 0;
+        for(Service service : serviceList) {
+            totalPrice += service.getPrice();
+        }
+        return totalPrice;
+    }
+
+    public int getTotalDuration() {
+        int totalDuration = 0;
+        for(Service service : serviceList) {
+            totalDuration += service.getServiceDuration();
+        }
+        return totalDuration;
+    }
+
+    public String getTotalPriceAndDuration() {
+        return getTotalPrice() + "£ / " + getTotalDuration() + " min";
+    }
+
 }

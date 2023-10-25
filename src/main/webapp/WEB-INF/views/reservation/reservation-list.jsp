@@ -16,6 +16,7 @@
         <tr>
             <th>Customer</th>
             <th>Service</th>
+            <th>Total: price/duration</th>
             <th>Appointment</th>
             <th>Create</th>
             <th>Update</th>
@@ -31,6 +32,7 @@
                         </c:forEach>
                     </ul>
                 </td>
+                <td>${reservation.getTotalPriceAndDuration()}</td>
                 <td>${reservation.createAppointmentFormatted}</td>
                 <td>${reservation.createReservationFormatted}</td>
                 <td>${reservation.updateReservationFormatted}</td>
