@@ -1,4 +1,4 @@
-package com.example.BeautyServices.customersList;
+package com.example.BeautyServices.setUpDataLoader;
 
 import com.example.BeautyServices.entity.Customer;
 import com.example.BeautyServices.entity.Service;
