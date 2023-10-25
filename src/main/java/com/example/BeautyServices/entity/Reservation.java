@@ -30,6 +30,13 @@ public class Reservation {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime appointment;
+    public String getCreateAppointmentFormatted(){
+        if (appointment == null){
+            return "Not updated";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm | dd/MM/yyyy");
+        return formatter.format(appointment);
+    }
 
     @Column(updatable = false)
     private LocalDateTime createReservation;

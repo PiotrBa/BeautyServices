@@ -31,7 +31,7 @@
                         </c:forEach>
                     </ul>
                 </td>
-                <td>${reservation.appointment}</td>
+                <td>${reservation.createAppointmentFormatted}</td>
                 <td>${reservation.createReservationFormatted}</td>
                 <td>${reservation.updateReservationFormatted}</td>
                 <td>
