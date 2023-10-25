@@ -15,6 +15,7 @@
         <tr>
             <th>Customer</th>
             <th>Service</th>
+            <th>Total: price/duration</th>
             <th>Appointment</th>
             <th>Actions</th>
         </tr>
@@ -28,7 +29,8 @@
                         </c:forEach>
                     </ul>
                 </td>
-                <td>${reservation.appointment}</td>
+                <td>${reservation.getTotalPriceAndDuration()}</td>
+                <td>${reservation.createAppointmentFormatted}</td>
                 <td>
                     <a href="/homepage/edit?id=${reservation.reservationId}">Edit</a><br/>
                     <a href="/homepage/delete?id=${reservation.reservationId}">Delete</a>
