@@ -20,8 +20,8 @@
             </form:option>
         </c:forEach>
         </form:select><br/>
-        <form:input type="datetime-local" path="appointment" pattern="yyyy-MM-dd'T'HH:mm"/><br/>
-        <form:button>Edit</form:button>
+        <form:input type="datetime-local" path="appointment"/><br/>
+        <form:button class="btn">Edit</form:button>
     </form:form>
     <div>
         <a href="/homepage">Back to list</a>

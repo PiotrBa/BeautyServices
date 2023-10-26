@@ -10,7 +10,7 @@
 <body>
 <h1>Delete customer</h1>
 <form:form method="post" modelAttribute="customers">
-    <p>Do you want to delete ${customer.name}?</p>
+    <p>Do you want to delete ${customers.name}?</p>
     <form:button>Yes</form:button> | <form:button><a href="/customers">No</a></form:button>
 </form:form>
 </body>
