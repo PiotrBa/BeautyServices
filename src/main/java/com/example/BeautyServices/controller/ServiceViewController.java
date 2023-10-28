@@ -1,6 +1,6 @@
 package com.example.BeautyServices.controller;
 
-import com.example.BeautyServices.entity.Service;
+import com.example.BeautyServices.entity.CosmeticService;
 import com.example.BeautyServices.repository.ServiceRepository;
 import com.example.BeautyServices.service.ServiceService;
 import lombok.AllArgsConstructor;
@@ -27,13 +27,13 @@ public class ServiceViewController {
 
     @GetMapping("/add")
     public String addServiceView(Model model){
-        model.addAttribute("services", new Service());
+        model.addAttribute("services", new CosmeticService());
         return "/service/service-add";
     }
 
     @PostMapping("/add")
-    public String addService(Service service){
-        serviceRepository.save(service);
+    public String addService(CosmeticService cosmeticService){
+        serviceRepository.save(cosmeticService);
         return "redirect:/services";
     }
 
@@ -44,22 +44,22 @@ public class ServiceViewController {
     }
 
     @PostMapping("edit")
-    public String editService(@RequestParam Long id, Service service){
-        Optional<Service> serviceOptional = serviceRepository.findById(id);
+    public String editService(@RequestParam Long id, CosmeticService cosmeticService){
+        Optional<CosmeticService> serviceOptional = serviceRepository.findById(id);
         if (serviceOptional.isPresent()) {
-            Service newService = serviceOptional.get();
-            newService.setServiceName(service.getServiceName());
-            newService.setPrice(service.getPrice());
-            newService.setServiceDuration(service.getServiceDuration());
-            newService.setServiceDescription(service.getServiceDescription());
-            serviceRepository.save(newService);
+            CosmeticService newCosmeticService = serviceOptional.get();
+            newCosmeticService.setServiceName(cosmeticService.getServiceName());
+            newCosmeticService.setPrice(cosmeticService.getPrice());
+            newCosmeticService.setServiceDuration(cosmeticService.getServiceDuration());
+            newCosmeticService.setServiceDescription(cosmeticService.getServiceDescription());
+            serviceRepository.save(newCosmeticService);
         }
         return "redirect:/services";
     }
 
     @GetMapping("/delete")
     public String deleteServiceView(Model model, @RequestParam Long id){
-        Optional<Service> serviceOptional = serviceRepository.findById(id);
+        Optional<CosmeticService> serviceOptional = serviceRepository.findById(id);
         if(serviceOptional.isPresent()) {
             model.addAttribute("services", serviceOptional.get());
         }
@@ -68,10 +68,10 @@ public class ServiceViewController {
 
     @PostMapping("/delete")
     public String deleteService(@RequestParam Long id){
-        Optional<Service> serviceOptional = serviceRepository.findById(id);
+        Optional<CosmeticService> serviceOptional = serviceRepository.findById(id);
         if(serviceOptional.isPresent()){
-            Service service = serviceOptional.get();
-            serviceService.removeService(service);
+            CosmeticService cosmeticService = serviceOptional.get();
+            serviceService.removeService(cosmeticService);
         }
         return "redirect:/services";
     }

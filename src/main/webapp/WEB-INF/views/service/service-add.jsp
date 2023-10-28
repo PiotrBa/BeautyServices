@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a service</title>
+    <title>Add a cosmeticService</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
-<h1>Add service</h1>
+<h1>Add cosmeticService</h1>
 <form:form method="post" modelAttribute="services">
     <div class="input-container">
         <label for="serviceName">Service Name:</label>

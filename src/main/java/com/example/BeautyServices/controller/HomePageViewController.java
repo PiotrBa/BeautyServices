@@ -75,7 +75,7 @@ public class HomePageViewController {
         if (reservationOptional.isPresent()) {
             LocalDateTime dateTimeNow = LocalDateTime.now();
             Reservation newReservation = reservationOptional.get();
-            newReservation.setServiceList(reservation.getServiceList());
+            newReservation.setCosmeticServiceList(reservation.getCosmeticServiceList());
             newReservation.setAppointment(reservation.getAppointment());
             newReservation.setUpdateReservation(dateTimeNow);
             reservationRepository.save(newReservation);

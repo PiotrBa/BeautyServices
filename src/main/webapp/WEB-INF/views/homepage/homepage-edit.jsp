@@ -13,10 +13,10 @@
 <div class="center">
     <form:form method="post" modelAttribute="reservations">
         <h2>${customer.name}</h2><br/>
-        <form:select class="frame" path="serviceList" multiple="true">
-        <c:forEach items="${serviceList}" var="service">
-            <form:option value="${service.serviceId}">
-                ${service.serviceName} - ${service.price}£ - ${service.serviceDuration} min
+        <form:select class="frame" path="cosmeticServiceList" multiple="true">
+        <c:forEach items="${serviceList}" var="cosmeticService">
+            <form:option value="${cosmeticService.serviceId}">
+                ${cosmeticService.serviceName} - ${cosmeticService.price}£ - ${cosmeticService.serviceDuration} min
             </form:option>
         </c:forEach>
         </form:select><br/>

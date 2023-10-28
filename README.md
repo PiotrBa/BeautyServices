@@ -5,7 +5,7 @@ The **BeautyServices** project is a web application created using Spring Boot, d
 
 ## Description
 
-The BeautyServices application is designed to provide an easy and intuitive interface for managing various aspects of beauty services. It allows users to browse available services, manage bookings, and access detailed information about each service.
+The BeautyServices application is designed to provide an easy and intuitive interface for managing various aspects of beauty services. It allows users to browse available services, manage bookings, and access detailed information about each cosmeticService.
 
 
 ## Technical Details

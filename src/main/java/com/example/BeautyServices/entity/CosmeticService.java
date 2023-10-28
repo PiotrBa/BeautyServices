@@ -8,7 +8,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Service {
+public class CosmeticService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

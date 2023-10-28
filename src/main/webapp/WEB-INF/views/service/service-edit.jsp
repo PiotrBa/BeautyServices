@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit service</title>
+    <title>Edit cosmeticService</title>
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
-<h1>Edit service</h1>
+<h1>Edit cosmeticService</h1>
 <form:form method="post" modelAttribute="services">
     Service Name: <form:input path="serviceName"/><br/>
     Price: <form:input path="price"/><br/>

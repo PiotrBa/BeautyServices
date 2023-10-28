@@ -26,7 +26,7 @@ public class Reservation {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "reservation_service", joinColumns = @JoinColumn(name = "reservation_id"), inverseJoinColumns = @JoinColumn(name = "service_id"))
-    private List<Service> serviceList = new ArrayList<>();
+    private List<CosmeticService> cosmeticServiceList = new ArrayList<>();
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime appointment;
@@ -61,16 +61,16 @@ public class Reservation {
 
     public double getTotalPrice() {
         double totalPrice = 0;
-        for(Service service : serviceList) {
-            totalPrice += service.getPrice();
+        for(CosmeticService cosmeticService : cosmeticServiceList) {
+            totalPrice += cosmeticService.getPrice();
         }
         return totalPrice;
     }
 
     public int getTotalDuration() {
         int totalDuration = 0;
-        for(Service service : serviceList) {
-            totalDuration += service.getServiceDuration();
+        for(CosmeticService cosmeticService : cosmeticServiceList) {
+            totalDuration += cosmeticService.getServiceDuration();
         }
         return totalDuration;
     }

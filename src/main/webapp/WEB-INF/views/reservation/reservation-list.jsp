@@ -27,8 +27,8 @@
                 <td>${reservation.customer.name}</td>
                 <td>
                     <ul>
-                        <c:forEach items="${reservation.serviceList}" var="service">
-                            <li>${service.serviceName}</li>
+                        <c:forEach items="${reservation.cosmeticServiceList}" var="cosmeticService">
+                            <li>${cosmeticService.serviceName}</li>
                         </c:forEach>
                     </ul>
                 </td>

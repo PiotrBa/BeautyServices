@@ -18,14 +18,14 @@
             <th>Description</th>
             <th>Action</th>
         </tr>
-        <c:forEach items="${services}" var="service">
+        <c:forEach items="${services}" var="cosmeticService">
             <tr>
-                <td>${service.serviceName}</td>
-                <td>${service.price}£</td>
-                <td>${service.serviceDuration}min</td>
-                <td>${service.serviceDescription}</td>
+                <td>${cosmeticService.serviceName}</td>
+                <td>${cosmeticService.price}£</td>
+                <td>${cosmeticService.serviceDuration}min</td>
+                <td>${cosmeticService.serviceDescription}</td>
                 <td class="action-btns">
-                    <a href="services/edit?id=${service.serviceId}">Edit</a> <a href="services/delete?id=${service.serviceId}">Delete</a><br/>
+                    <a href="services/edit?id=${cosmeticService.serviceId}">Edit</a> <a href="services/delete?id=${cosmeticService.serviceId}">Delete</a><br/>
                 </td>
             </tr>
         </c:forEach>

@@ -1,7 +1,7 @@
 package com.example.BeautyServices.service;
 
 import com.example.BeautyServices.entity.Reservation;
-import com.example.BeautyServices.entity.Service;
+import com.example.BeautyServices.entity.CosmeticService;
 import com.example.BeautyServices.repository.ReservationRepository;
 import com.example.BeautyServices.repository.ServiceRepository;
 import lombok.AllArgsConstructor;
@@ -20,21 +20,21 @@ public class ServiceServiceImpl implements ServiceService {
 
     @Transactional
     @Override
-    public boolean removeService(Service service) {
-        if (service == null) {
-            throw new IllegalArgumentException("Service cannot be null");
+    public boolean removeService(CosmeticService cosmeticService) {
+        if (cosmeticService == null) {
+            throw new IllegalArgumentException("CosmeticService cannot be null");
         }
 
-        boolean exists = serviceRepository.existsById(service.getServiceId());
+        boolean exists = serviceRepository.existsById(cosmeticService.getServiceId());
         if (!exists) {
-            throw new IllegalArgumentException(String.format("Service with %d does not exist", service.getServiceId()));
+            throw new IllegalArgumentException(String.format("CosmeticService with %d does not exist", cosmeticService.getServiceId()));
         }
 
-        List<Reservation> relatedReservations = reservationRepository.findAllByServiceListContains(service);
+        List<Reservation> relatedReservations = reservationRepository.findAllByServiceListContains(cosmeticService);
         for (Reservation reservation : relatedReservations) {
-            List<Service> servicesInReservation = reservation.getServiceList();
+            List<CosmeticService> servicesInReservation = reservation.getCosmeticServiceList();
             for (int i = 0; i < servicesInReservation.size(); i++) {
-                if (servicesInReservation.get(i).getServiceId().equals(service.getServiceId())) {
+                if (servicesInReservation.get(i).getServiceId().equals(cosmeticService.getServiceId())) {
                     servicesInReservation.remove(i);
                     i--;
                 }
@@ -47,7 +47,7 @@ public class ServiceServiceImpl implements ServiceService {
             }
         }
 
-        serviceRepository.delete(service);
+        serviceRepository.delete(cosmeticService);
         return true;
     }
 }
