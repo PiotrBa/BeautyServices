@@ -31,7 +31,7 @@ public class ServiceServiceImpl implements ServiceService {
             throw new IllegalArgumentException(String.format("CosmeticService with %d does not exist", cosmeticService.getServiceId()));
         }
 
-        List<Reservation> relatedReservations = reservationRepository.findAllByServiceListContains(cosmeticService);
+        List<Reservation> relatedReservations = reservationRepository.findAllBycosmeticServiceListContains(cosmeticService);
         for (Reservation reservation : relatedReservations) {
             List<CosmeticService> servicesInReservation = reservation.getCosmeticServiceList();
             for (int i = 0; i < servicesInReservation.size(); i++) {

@@ -9,5 +9,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 
     List<Reservation>findByCustomerName(String customer);
 
-    List<Reservation> findAllByServiceListContains(CosmeticService cosmeticService);
+    List<Reservation> findAllBycosmeticServiceListContains(CosmeticService cosmeticService);
+
 }
