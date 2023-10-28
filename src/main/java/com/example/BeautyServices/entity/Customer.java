@@ -2,6 +2,7 @@ package com.example.BeautyServices.entity;
 
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -17,6 +18,7 @@ public class Customer {
     private Long customerId;
     private String name;
     private String mobileNumber;
+    @Email
     private String email;
 
     @Column(nullable = false, unique = true)

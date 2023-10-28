@@ -2,6 +2,7 @@ package com.example.BeautyServices.controller;
 
 import com.example.BeautyServices.entity.Service;
 import com.example.BeautyServices.repository.ServiceRepository;
+import com.example.BeautyServices.service.ServiceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ServiceViewController {
     private final ServiceRepository serviceRepository;
+    private final ServiceService serviceService;
 
     @GetMapping()
     public String getListView(Model model) {
@@ -69,7 +71,7 @@ public class ServiceViewController {
         Optional<Service> serviceOptional = serviceRepository.findById(id);
         if(serviceOptional.isPresent()){
             Service service = serviceOptional.get();
-            serviceRepository.delete(service);
+            serviceService.removeService(service);
         }
         return "redirect:/services";
     }

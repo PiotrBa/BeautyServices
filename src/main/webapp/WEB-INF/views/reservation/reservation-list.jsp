@@ -47,9 +47,9 @@
         <a href="/reservations/add">Add new appointment</a>
         <a href="/customers">Customers</a>
         <a href="/services">Services</a>
-        <a href="/logout">Logout</a>
+        <a href="/register/admin">Register new admin</a>
         <br>
-        <a href="/register/admin">Register admin</a>
+        <a href="/logout">Logout</a>
     </div>
 </div>
 </body>
