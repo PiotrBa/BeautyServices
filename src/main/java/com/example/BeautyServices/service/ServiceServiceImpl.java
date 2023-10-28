@@ -5,11 +5,12 @@ import com.example.BeautyServices.entity.CosmeticService;
 import com.example.BeautyServices.repository.ReservationRepository;
 import com.example.BeautyServices.repository.ServiceRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
-@org.springframework.stereotype.Service
+@Service
 @AllArgsConstructor
 public class ServiceServiceImpl implements ServiceService {
 
