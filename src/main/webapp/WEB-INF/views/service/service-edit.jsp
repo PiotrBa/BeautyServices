@@ -8,14 +8,24 @@
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
-<h1>Edit cosmeticService</h1>
+<h1>Edit service</h1>
 <form:form method="post" modelAttribute="services">
-    Service Name: <form:input path="serviceName"/><br/>
-    Price: <form:input path="price"/><br/>
-    Service Duration: <form:input path="serviceDuration"/><br/>
-    Service Description: <form:input path="serviceDescription"/><br/>
-    <form:button>Edit</form:button>
+    <div class="input-group">
+        Service Name: <form:input path="serviceName"/>
+    </div>
+    <div class="input-group">
+        Price: <form:input path="price"/>
+    </div>
+    <div class="input-group">
+        Service Duration: <form:input path="serviceDuration"/>
+    </div>
+    <div class="input-group">
+        Service Description: <form:input path="serviceDescription"/>
+    </div>
+    <form:button class="btn">Save</form:button>
 </form:form><br>
-<a href="/services">Back to list</a>
+<div>
+    <a href="/services">Back to list</a>
+</div>
 </body>
 </html>

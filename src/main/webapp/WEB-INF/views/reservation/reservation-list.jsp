@@ -16,7 +16,7 @@
         <tr>
             <th>Customer</th>
             <th>Service</th>
-            <th>Total: price/duration</th>
+            <th>Total: price/ duration</th>
             <th>Appointment</th>
             <th>Create</th>
             <th>Update</th>
@@ -27,7 +27,7 @@
                 <td>${reservation.customer.name}</td>
                 <td>
                     <ul>
-                        <c:forEach items="${reservation.cosmeticServiceList}" var="cosmeticService">
+                        <c:forEach items="${reservation.serviceList}" var="cosmeticService">
                             <li>${cosmeticService.serviceName}</li>
                         </c:forEach>
                     </ul>

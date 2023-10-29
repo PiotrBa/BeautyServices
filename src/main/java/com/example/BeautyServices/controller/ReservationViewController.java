@@ -61,7 +61,7 @@ public class ReservationViewController {
         if (reservationOptional.isPresent()) {
             LocalDateTime dateTimeNow = LocalDateTime.now();
             Reservation newReservation = reservationOptional.get();
-            newReservation.setCosmeticServiceList(reservation.getCosmeticServiceList());
+            newReservation.setServiceList(reservation.getServiceList());
             newReservation.setAppointment(reservation.getAppointment());
             newReservation.setUpdateReservation(dateTimeNow);
             reservationRepository.save(newReservation);

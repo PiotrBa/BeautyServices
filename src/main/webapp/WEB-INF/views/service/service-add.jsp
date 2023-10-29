@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
-<h1>Add cosmeticService</h1>
+<h1>Add service</h1>
 <form:form method="post" modelAttribute="services">
     <div class="input-container">
         <label for="serviceName">Service Name:</label>

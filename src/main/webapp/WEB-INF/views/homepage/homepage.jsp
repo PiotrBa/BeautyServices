@@ -15,7 +15,7 @@
         <tr>
             <th>Customer</th>
             <th>Service</th>
-            <th>Total: price/duration</th>
+            <th>Total: price/ duration</th>
             <th>Appointment</th>
             <th>Actions</th>
         </tr>

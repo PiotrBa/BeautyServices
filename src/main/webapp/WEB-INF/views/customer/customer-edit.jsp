@@ -11,12 +11,20 @@
 <body>
 <h1>Edit customer</h1>
 <form:form method="post" modelAttribute="customers">
-    Name: <form:input path="name"/><br/>
-    Mobile number: <form:input path="mobileNumber"/><br/>
-    Email: <form:input path="email"/><br/><br>
-    <form:button>Edit</form:button>
+    <div class="input-group">
+        Name: <form:input path="name"/>
+    </div>
+    <div class="input-group">
+        Mobile number: <form:input path="mobileNumber"/>
+    </div>
+    <div class="input-group">
+        Email: <form:input path="email"/>
+    </div>
+    <form:button class="btn">Save</form:button>
 </form:form>
-<br>
-<a href="/customers">Back to list</a>
+<div>
+    <a href="/customers">Back to list</a>
+</div>
+
 </body>
 </html>

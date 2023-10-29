@@ -17,10 +17,10 @@
             <form:select path="customer"  items="${customer}" itemValue="customerId" itemLabel="name"/>
         </div>
         <div class="input-container">
-            <form:select class="frame" path="cosmeticServiceList" multiple="true">
+            <form:select class="frame" path="serviceList" multiple="true">
                 <c:forEach items="${serviceList}" var="cosmeticService">
                     <form:option value="${cosmeticService.serviceId}">
-                        ${cosmeticService.serviceName} - ${cosmeticService.price}£ - ${cosmeticService.serviceDuration} min
+                        ${cosmeticService.serviceName} - ${cosmeticService.price}£ - ${cosmeticService.serviceDuration} min - ${cosmeticService.serviceDescription}
                     </form:option>
                 </c:forEach>
             </form:select>

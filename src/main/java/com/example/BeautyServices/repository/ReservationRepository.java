@@ -8,7 +8,6 @@ import java.util.List;
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
     List<Reservation>findByCustomerName(String customer);
-
-    List<Reservation> findAllBycosmeticServiceListContains(CosmeticService cosmeticService);
+    List<Reservation> findAllByserviceListContains(CosmeticService cosmeticService);
 
 }

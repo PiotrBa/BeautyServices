@@ -10,12 +10,10 @@
 </head>
 <body>
 <h1>Delete appointment</h1>
-<div class="center">
     <form:form method="post" modelAttribute="reservation">
         <p>Do you want to delete ${reservation.customer.name} appointment?</p>
         <form:button>Yes</form:button>
         <form:button><a href="/reservations">No</a></form:button>
     </form:form>
-</div>
 </body>
 </html>

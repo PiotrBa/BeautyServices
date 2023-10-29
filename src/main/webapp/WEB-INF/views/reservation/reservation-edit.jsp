@@ -15,7 +15,7 @@
     <form:form method="post" modelAttribute="reservations">
         <h2>${customer.name}</h2><br/>
         <div>
-            <form:select class="frame" path="cosmeticServiceList" multiple="true">
+            <form:select class="frame" path="serviceList" multiple="true">
             <c:forEach items="${serviceList}" var="cosmeticService">
                 <form:option value="${cosmeticService.serviceId}">
                     ${cosmeticService.serviceName} - ${cosmeticService.price}£ - ${cosmeticService.serviceDuration} min
@@ -26,7 +26,7 @@
         <div>
             <form:input type="datetime-local" path="appointment" pattern="yyyy-MM-dd'T'HH:mm"/><br/>
         </div>
-        <form:button class="btn">Edit</form:button>
+        <form:button class="btn">Save</form:button>
     </form:form>
     <div>
         <a href="/reservations">Back to list</a>
