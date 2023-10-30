@@ -10,22 +10,22 @@
 <body>
 <h1>Add service</h1>
 <form:form method="post" modelAttribute="services">
-    <div class="input-container">
+    <div class="input-container service">
         <label for="serviceName">Service Name:</label>
         <form:input path="serviceName"/>
     </div>
 
-    <div class="input-container">
+    <div class="input-container service">
         <label for="price">Price:</label>
         <form:input path="price"/>
     </div>
 
-    <div class="input-container">
+    <div class="input-container service">
         <label for="serviceDuration">Service Duration:</label>
         <form:input path="serviceDuration"/>
     </div>
 
-    <div class="input-container">
+    <div class="input-container service">
         <label for="serviceDescription">Service Description:</label>
         <form:input path="serviceDescription"/>
     </div>

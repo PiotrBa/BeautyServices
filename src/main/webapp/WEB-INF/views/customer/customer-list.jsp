@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Mobile number</th>
             <th>Email</th>
+            <th>Role</th>
             <th>Actions</th>
         </tr>
         <c:forEach items="${customers}" var="customer">
@@ -22,6 +23,7 @@
                 <td>${customer.name}</td>
                 <td>${customer.mobileNumber}</td>
                 <td>${customer.email}</td>
+                <td>${customer.role}</td>
                 <td class="action-btns">
                     <a href="customers/edit?id=${customer.customerId}">Edit</a>
                     <a href="customers/delete?id=${customer.customerId}">Delete</a>

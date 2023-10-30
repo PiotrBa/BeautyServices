@@ -75,21 +75,29 @@ a:hover {
 .input-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
+    gap: 20px;
+
 }
 
 
 .input-container label {
     flex: 1;
     margin-right: 10px;
-
+    width: 400px;
 }
 
 
 .input-container input {
-    border-radius: 15px;
+    border-radius: 20px;
     flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.service input{
+    width: 50px;
 }
 
 #customer{

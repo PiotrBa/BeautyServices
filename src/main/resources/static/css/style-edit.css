@@ -28,20 +28,21 @@ form {
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 input[type="text"], select {
-    width: auto;
+    width: 200px;
     padding: 8px;
-    margin: 10px 0;
+    /*margin: 10px 0;*/
     border: 1px solid #ccc;
     border-radius: 20px;
 }
 
 input[type="password"], select {
-    width: auto;
+    width: 200px;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
 }
+
 
 input[type="submit"] {
     background-color: #595959;

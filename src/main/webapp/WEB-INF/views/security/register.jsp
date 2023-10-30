@@ -24,7 +24,7 @@
         User name: <form:input path="username"/><form:errors path="username"/>
     </div>
     <div class="input-group">
-        Password: <form:password path="password"/><form:errors path="password"/>
+        Password: <form:password path="password" class="password-register"/><form:errors path="password"/>
     </div>
     <form:button class="btn">Register</form:button>
 </form:form>
