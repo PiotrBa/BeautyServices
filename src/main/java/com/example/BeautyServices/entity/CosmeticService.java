@@ -2,7 +2,6 @@ package com.example.BeautyServices.entity;
 
 import lombok.*;
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -19,4 +18,3 @@ public class CosmeticService {
     private int serviceDuration;
     private String serviceDescription;
 }
-

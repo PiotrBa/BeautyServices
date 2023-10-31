@@ -2,6 +2,7 @@ package com.example.BeautyServices.controller;
 
 import com.example.BeautyServices.entity.Customer;
 import com.example.BeautyServices.repository.CustomerRepository;
+import com.example.BeautyServices.service.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class CustomerViewController {
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
+    private final CustomerService customerService;
 
 
     @GetMapping()
@@ -71,7 +73,7 @@ public class CustomerViewController {
         Optional<Customer> customerOptional = customerRepository.findById(id);
         if(customerOptional.isPresent()){
             Customer customer = customerOptional.get();
-            customerRepository.delete(customer);
+            customerService.deleteCustomer(customer.getCustomerId());
         }
         return "redirect:/customers";
     }
