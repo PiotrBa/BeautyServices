@@ -112,7 +112,10 @@ select{
     border-radius: 15px;
 }
 #appointment{
-    border-radius: 10px;
+    border-radius: 20px;
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
 }
 p{
     display:block;

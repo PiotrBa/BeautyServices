@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style-login.css" />
 </head>
 <body>
 <form method="post" action="/login">
