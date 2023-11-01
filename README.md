@@ -27,6 +27,7 @@ https://github.com/PiotrBa/BeautyServices/assets/92756702/f54dbf7e-7349-4c4a-955
 
 ## User data
 ### The admin does not have access to users' passwords, and each password is encrypted with "bcrypt".
+(Jest to zdjecje zanim uzytkownik Julia Smith zostala usunieta).
 
 ![users_list](https://github.com/PiotrBa/BeautyServices/assets/92756702/0e47b162-ae3f-4d96-9af8-14aaff4dd622)
 
