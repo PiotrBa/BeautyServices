@@ -9,17 +9,17 @@ The BeautyServices application is designed to provide an easy and intuitive inte
 
 
 ## Videos
-Presentation of the application's functionality from the user's perspective.
+### Presentation of the application's functionality from the user's perspective.
 
 https://github.com/PiotrBa/BeautyServices/assets/92756702/b6fcff57-a91e-45ad-ae70-c6525c6582ae
 
-Presentation of the application's functionality from the admin's perspective.
-Part.1
+### Presentation of the application's functionality from the admin's perspective.
+- Part.1
 Adding a service and a user, as well as their editing.
 
 https://github.com/PiotrBa/BeautyServices/assets/92756702/1bfb9807-a054-47c3-aa6d-ad13129711f4
 
-Part.2
+- Part.2
 Adding a new admin, booking, editing, and deleting an appointment, all without any issues related to the foreign key constraint in the database.
 
 https://github.com/PiotrBa/BeautyServices/assets/92756702/f54dbf7e-7349-4c4a-9558-d370bf2a0857
