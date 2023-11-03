@@ -44,7 +44,7 @@ public class RegisterViewController {
         customer.setRole("ROLE_ADMIN");
         customer.setActive(true);
         customerRepository.save(customer);
-        return "redirect:/reservations";
+        return "redirect:/customers";
     }
 }
 

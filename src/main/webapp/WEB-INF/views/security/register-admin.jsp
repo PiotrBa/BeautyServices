@@ -29,7 +29,7 @@
     <form:button class="btn">Register</form:button>
 </form:form>
 <div>
-    <a href="/reservations">Back</a>
+    <a href="/customers">Back</a>
 </div>
 </body>
 </html>
