@@ -20,7 +20,7 @@ Adding a service and a user, as well as their editing.
 https://github.com/PiotrBa/BeautyServices/assets/92756702/1bfb9807-a054-47c3-aa6d-ad13129711f4
 
 - Part.2
-Adding a new admin, booking, editing, and deleting an appointment, all without any issues related to the foreign key constraint in the database.
+Adding a new admin, booking, editing, and deleting an appointment.
 
 https://github.com/PiotrBa/BeautyServices/assets/92756702/f54dbf7e-7349-4c4a-9558-d370bf2a0857
 
@@ -38,17 +38,17 @@ https://github.com/PiotrBa/BeautyServices/assets/92756702/f54dbf7e-7349-4c4a-955
 
 ### Frameworks & Libraries:
 - **Spring Boot**: 2.7.15
-    - **Spring Data JPA**: (version managed by Spring Boot 2.7.15)
-    - **Spring Validation**: (version managed by Spring Boot 2.7.15)
-    - **Spring Web MVC**: (version managed by Spring Boot 2.7.15)
-    - **Spring Security**: (version managed by Spring Boot 2.7.15)
-- **Hibernate**: (version managed by Spring Boot 2.7.15)
-- **MySQL Connector/J**: (runtime version)
-- **Lombok**: 1.18.28 (optional)
-- **JUnit**: (version managed by Spring Boot 2.7.15, scope: test)
+    - **Spring Data JPA**
+    - **Spring Validation**
+    - **Spring Web MVC**
+    - **Spring Security**
+- **Hibernate**
+- **MySQL Connector/J**
+- **Lombok**: 1.18.28 
+- **JUnit**
 - **JSTL**: 1.2
-- **Tomcat Embed Jasper**: (version managed by Spring Boot 2.7.15)
-- **Spring Security Taglibs**: (version managed by Spring Boot 2.7.15)
+- **Tomcat Embed Jasper**
+- **Spring Security Taglibs**
 
 
 ## How to Run the Application
