@@ -69,7 +69,7 @@ public class CustomerRepositoryTest {
         Assertions.assertEquals("1234567890", savedCustomer.getMobileNumber(), "The mobile number should be 1234567890");
         Assertions.assertEquals("test@example.com", savedCustomer.getEmail(), "The customer email should be test@example.com");
         Assertions.assertEquals("test user", savedCustomer.getUsername(), "The customer username should be test user");
-        Assertions.assertEquals("password", savedCustomer.getPassword(), "The customer password should be bcrypt");
+        Assertions.assertEquals("password", savedCustomer.getPassword(), "The customer password should be password");
         Assertions.assertEquals("USER", savedCustomer.getRole(), "The customer role should be USER");
         Assertions.assertEquals(true, savedCustomer.getActive(), "The customer active should be true");
 
