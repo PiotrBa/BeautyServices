@@ -16,6 +16,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @DataJpaTest
 @ActiveProfiles("test")
 public class ReservationRepositoryTest {
@@ -45,9 +47,7 @@ public class ReservationRepositoryTest {
         List<Reservation> foundReservation = reservationRepository.findByCustomerName("Test Customer");
 
         Assertions.assertTrue(foundReservation.isEmpty(), "Reservations should be found");
-        if (!foundReservation.isEmpty()) {
-            Assertions.assertEquals(customer.getName(), foundReservation.get(0).getCustomer().getName(), "The customer's name should match");
-        }
+        assertEquals(customer.getName(), foundReservation.get(0).getCustomer().getName(), "The customer's name should match");
     }
 
     @Test
@@ -68,9 +68,7 @@ public class ReservationRepositoryTest {
         List<Reservation> foundReservations = reservationRepository.findByCustomerName("Test Customer");
 
         Assertions.assertTrue(foundReservations.isEmpty(), "Reservations should be found");
-        if (!foundReservations.isEmpty()) {
-            Assertions.assertEquals(customer.getName(), foundReservations.get(0).getCustomer().getName(), "The customer's name should match");
-        }
+        assertEquals(customer.getName(), foundReservations.get(0).getCustomer().getName(), "The customer's name should match");
     }
 
     @Test
@@ -138,7 +136,7 @@ public class ReservationRepositoryTest {
         Reservation foundReservation = reservationRepository.findById(savedReservation.getReservationId()).orElse(null);
 
         Assertions.assertNotNull(foundReservation, "Reservation should be found");
-        Assertions.assertEquals(savedReservation.getReservationId(), foundReservation.getReservationId(), "Reservation IDs should match");
+        assertEquals(savedReservation.getReservationId(), foundReservation.getReservationId(), "Reservation IDs should match");
     }
 
     @Test
@@ -155,7 +153,7 @@ public class ReservationRepositoryTest {
         Reservation savedReservation = reservationRepository.save(newReservation);
 
         Assertions.assertNotNull(savedReservation.getReservationId(), "Reservation should be saved with an ID");
-        Assertions.assertEquals(newReservation.getCustomer().getName(), savedReservation.getCustomer().getName(), "Customer names should match");
+        assertEquals(newReservation.getCustomer().getName(), savedReservation.getCustomer().getName(), "Customer names should match");
     }
 
     @Test

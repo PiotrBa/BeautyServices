@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+
+import static com.beautyServices.BeautyServices.UtilsData.builderService;
 
 @DataJpaTest
 @ActiveProfiles("test")
@@ -20,23 +21,22 @@ public class ServiceRepositoryTest {
     private ServiceRepository serviceRepository;
 
     @Test
-    @Transactional
     void whenFindAll_thenReturnsAllServices(){
-        CosmeticService testService1 = new CosmeticService(null, "Service 1", 100.0, 60, "Description 1");
-        CosmeticService testService2 = new CosmeticService(null, "Service 2", 150.0, 90, "Description 2");
-        serviceRepository.save(testService1);
-        serviceRepository.save(testService2);
+        CosmeticService testService1 = builderService();
+        testService1.setServiceName("Service 1");
+        CosmeticService testService2 = builderService();
+        testService2.setServiceName("Service 2");
+        serviceRepository.saveAll(List.of(testService1, testService2));
 
         List<CosmeticService> serviceList = serviceRepository.findAll();
 
-        Assertions.assertFalse(serviceList.isEmpty(), "The list of services should not be empty.");
-        Assertions.assertTrue(serviceList.size() >= 2, "There should be at least two services.");
+        Assertions.assertFalse(serviceList.isEmpty(), "The list of services should be empty.");
+        Assertions.assertEquals(2,serviceList.size(), "There should be at least two services.");
     }
 
     @Test
-    @Transactional
     void whenFindById_thenReturnService(){
-        CosmeticService service = new CosmeticService(null, "Service Test", 120.0, 75, "Test Description");
+        CosmeticService service = builderService();
         service = serviceRepository.save(service);
 
         Optional<CosmeticService> foundService = serviceRepository.findById(service.getServiceId());
@@ -46,25 +46,22 @@ public class ServiceRepositoryTest {
     }
 
     @Test
-    @Transactional
     void whenSave_thenServiceIsCreated(){
-        CosmeticService newService = new CosmeticService(null, "New Service", 200.0, 120, "New Service Description");
+        CosmeticService newService = builderService();
         CosmeticService savedService = serviceRepository.save(newService);
-
+        Optional<CosmeticService> foundService = serviceRepository.findById(savedService.getServiceId());
         Assertions.assertNotNull(savedService.getServiceId(), "The service ID should not be null after saving");
         Assertions.assertEquals("New Service", savedService.getServiceName(), "The service name should be New Service");
         Assertions.assertEquals(200.0, savedService.getPrice(), "The service price should be 200.0");
         Assertions.assertEquals(120, savedService.getServiceDuration(), "The service duration should be 120 minutes");
         Assertions.assertEquals("New Service Description", savedService.getServiceDescription(), "The service description should be New Service Description");
 
-        Optional<CosmeticService> foundService = serviceRepository.findById(savedService.getServiceId());
         Assertions.assertTrue(foundService.isPresent(), "The service should be available in the database");
     }
 
     @Test
-    @Transactional
     void whenDelete_thenServiceIsRemoved(){
-        CosmeticService service = new CosmeticService(null, "Service for Deletion", 130.0, 80, "Deletion Test");
+        CosmeticService service = builderService();
         service = serviceRepository.save(service);
         serviceRepository.delete(service);
 

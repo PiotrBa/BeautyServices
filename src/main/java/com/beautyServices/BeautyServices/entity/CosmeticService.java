@@ -8,6 +8,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class CosmeticService {
 
     @Id
