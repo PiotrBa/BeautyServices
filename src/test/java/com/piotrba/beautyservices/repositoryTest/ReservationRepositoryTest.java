@@ -11,11 +11,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.piotrba.beautyservices.UtilsData.builderCustomer;
+import static com.piotrba.beautyservices.UtilsData.builderService;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
@@ -30,12 +31,11 @@ public class ReservationRepositoryTest {
 
 
     @Test
-    @Transactional
     void whenFindByCustomer_thenReturnReservations(){
-        Customer customer = new Customer(null, "Test User", "1234567890", "test@example.com", "test user", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
 
-        CosmeticService service = new CosmeticService(null, "Service Test", 120.0, 75, "Test Description");
+        CosmeticService service = builderService();
         testEntityManager.persist(service);
         List<CosmeticService> serviceList = new ArrayList<>();
         serviceList.add(service);
@@ -51,12 +51,11 @@ public class ReservationRepositoryTest {
     }
 
     @Test
-    @Transactional
     void whenFindByCustomerName_thenReturnReservation(){
-        Customer customer = new Customer(null, "Test User", "1234567890", "test@example.com", "test user", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
 
-        CosmeticService service = new CosmeticService(null, "Service Test", 120.0, 75, "Test Description");
+        CosmeticService service = builderService();
         testEntityManager.persist(service);
         List<CosmeticService> serviceList = new ArrayList<>();
         serviceList.add(service);
@@ -72,41 +71,39 @@ public class ReservationRepositoryTest {
     }
 
     @Test
-    @Transactional
     void whenFindAllByServiceListContains_thenReturnsReservations(){
-        CosmeticService cosmeticService = new CosmeticService(null, "Test service name", 00.0, 0, "Test");
-        testEntityManager.persist(cosmeticService);
+        CosmeticService service = builderService();
+        testEntityManager.persist(service);
 
-        Customer customer = new Customer(null, "Test User", "1234567890", "test@example.com", "test user2", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
 
         List<CosmeticService> serviceList = new ArrayList<>();
-        serviceList.add(cosmeticService);
+        serviceList.add(service);
         Reservation reservation = new Reservation(null, customer, serviceList, LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now());
         testEntityManager.persistAndFlush(reservation);
 
-        List<Reservation> foundReservations = reservationRepository.findAllByserviceListContains(cosmeticService);
+        List<Reservation> foundReservations = reservationRepository.findAllByserviceListContains(service);
 
         Assertions.assertFalse(foundReservations.isEmpty(), "Reservations should be found");
         Assertions.assertTrue(foundReservations.stream()
-                .anyMatch(r -> r.getServiceList().contains(cosmeticService)), "The reservation should contain the specified cosmetic service");
+                .anyMatch(r -> r.getServiceList().contains(service)), "The reservation should contain the specified cosmetic service");
     }
 
     @Test
-    @Transactional
     void whenFindAll_thenReturnAllReservations() {
-        Customer customer1 = new Customer(null, "Test User 1", "1234567890", "test1@example.com", "test user1", "password1", "USER", true);
+        Customer customer1 = builderCustomer();
         testEntityManager.persist(customer1);
-        CosmeticService service1 = new CosmeticService(null, "Service 1", 100.0, 60, "Description 1");
+        CosmeticService service1 = builderService();
         testEntityManager.persist(service1);
         List<CosmeticService> serviceList1 = new ArrayList<>();
         serviceList1.add(service1);
         Reservation reservation1 = new Reservation(null, customer1, serviceList1, LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now());
         testEntityManager.persist(reservation1);
 
-        Customer customer2 = new Customer(null, "Test User 2", "1234567890", "test2@example.com", "test user2", "password2", "USER", true);
+        Customer customer2 = builderCustomer();
         testEntityManager.persist(customer2);
-        CosmeticService service2 = new CosmeticService(null, "Service 2", 200.0, 90, "Description 2");
+        CosmeticService service2 = builderService();
         testEntityManager.persist(service2);
         List<CosmeticService> serviceList2 = new ArrayList<>();
         serviceList2.add(service2);
@@ -120,12 +117,11 @@ public class ReservationRepositoryTest {
 
 
     @Test
-    @Transactional
     void whenFindById_thenReturnReservation() {
-        Customer customer = new Customer(null, "Test User", "1234567890", "test@example.com", "test user", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
 
-        CosmeticService service = new CosmeticService(null, "Service Test", 120.0, 75, "Test Description");
+        CosmeticService service = builderService();
         testEntityManager.persist(service);
         List<CosmeticService> serviceList = new ArrayList<>();
         serviceList.add(service);
@@ -140,11 +136,10 @@ public class ReservationRepositoryTest {
     }
 
     @Test
-    @Transactional
     void whenSaveReservation_thenPersist() {
-        Customer customer = new Customer(null, "New User", "1234567891", "new@example.com", "new user", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
-        CosmeticService service = new CosmeticService(null, "New Service", 200.0, 90, "New Description");
+        CosmeticService service = builderService();
         testEntityManager.persist(service);
         List<CosmeticService> serviceList = new ArrayList<>();
         serviceList.add(service);
@@ -157,11 +152,10 @@ public class ReservationRepositoryTest {
     }
 
     @Test
-    @Transactional
     void whenDeleteReservation_thenRemove() {
-        Customer customer = new Customer(null, "User to Delete", "1234567892", "delete@example.com", "delete user", "password", "USER", true);
+        Customer customer = builderCustomer();
         testEntityManager.persist(customer);
-        CosmeticService service = new CosmeticService(null, "Delete Service", 150.0, 60, "Delete Description");
+        CosmeticService service = builderService();
         testEntityManager.persist(service);
         List<CosmeticService> serviceList = new ArrayList<>();
         serviceList.add(service);
