@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style-list.css" />
 </head>
 <body>
-<h1>List of services</h1>
+<h1>Service-list</h1>
 <div>
     <table>
         <tr>
