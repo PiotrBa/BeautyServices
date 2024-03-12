@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
-<h1>Edit service</h1>
+<h1>Service-edit</h1>
 <form:form method="post" modelAttribute="services">
     <div class="input-group">
         Service Name: <form:input path="serviceName"/>
