@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Admin</title>
+    <title>Register-admin</title>
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 
 </head>
