@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
-<h1>Edit appointment</h1>
+<h1>Reservation-edit</h1>
 <div class="center">
     <form:form method="post" modelAttribute="reservations">
         <h2>${customer.name}</h2><br/>
