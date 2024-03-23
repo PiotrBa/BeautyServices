@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<h1>List of appointments</h1>
+<h1>Reservation-list</h1>
 <div>
     <table>
         <tr>
