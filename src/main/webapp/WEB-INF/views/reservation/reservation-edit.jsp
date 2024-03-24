@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit reservation</title>
+    <title>Reservation-edit</title>
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
