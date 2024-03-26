@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<h1>Delete appointment</h1>
+<h1>Reservation-delete</h1>
     <form:form method="post" modelAttribute="reservation">
         <p>Do you want to delete ${reservation.customer.name} appointment?</p>
         <form:button>Yes</form:button>
