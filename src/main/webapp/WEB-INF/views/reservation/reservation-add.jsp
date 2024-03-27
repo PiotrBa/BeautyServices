@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<h1>Add new appointment</h1>
+<h1>Reservation-add</h1>
 <div class="center">
     <form:form method="post" modelAttribute="reservations">
         <div>
