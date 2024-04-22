@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<h1>Edit customer</h1>
+<h1>Customer-edit</h1>
 <form:form method="post" modelAttribute="customers">
     <div class="input-group">
         Name: <form:input path="name"/>
