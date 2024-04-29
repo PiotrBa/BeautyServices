@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delete reservation</title>
+    <title>Homepage-delete</title>
     <link rel="stylesheet" type="text/css" href="/css/style-delete.css" />
 
 </head>
