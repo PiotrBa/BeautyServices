@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a reservation</title>
+    <title>Reservation-add</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 
 </head>
