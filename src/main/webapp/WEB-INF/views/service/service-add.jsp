@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a cosmeticService</title>
+    <title>Service-add</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
