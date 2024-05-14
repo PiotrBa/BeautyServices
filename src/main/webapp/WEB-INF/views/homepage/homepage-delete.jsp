@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<h1>Delete appointment</h1>
+<h1>Homepage-delete</h1>
     <form:form method="post" modelAttribute="reservation">
         <p>Do you really want to cancel your appointment?</p>
         <form:button>Yes</form:button>
