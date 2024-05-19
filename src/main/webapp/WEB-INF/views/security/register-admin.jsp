@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<h1>Admin registration</h1>
+<h1>Register-admin</h1>
 <form:form method="post" modelAttribute="admin">
     <div class="input-group">
         First/Last name: <form:input path="name"/><form:errors path="name"/>
