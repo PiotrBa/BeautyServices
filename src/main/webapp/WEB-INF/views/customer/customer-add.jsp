@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a customer</title>
+    <title>Customer-add</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
-<h1>Customer-add</h1>
+<h1>ustomer-add</h1>
 <form:form method="post" modelAttribute="customers">
     <div class="input-container">
         <label for="name">Name:</label>
