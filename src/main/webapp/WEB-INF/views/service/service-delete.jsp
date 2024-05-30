@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delete cosmeticService</title>
+    <title>Service-delete</title>
     <link rel="stylesheet" type="text/css" href="/css/style-delete.css" />
 </head>
 <body>
