@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit cosmeticService</title>
+    <title>Service-edit</title>
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
