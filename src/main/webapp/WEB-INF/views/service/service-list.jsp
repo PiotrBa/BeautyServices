@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>List of services</title>
+    <title>Service-list</title>
     <link rel="stylesheet" type="text/css" href="/css/style-list.css" />
 </head>
 <body>
