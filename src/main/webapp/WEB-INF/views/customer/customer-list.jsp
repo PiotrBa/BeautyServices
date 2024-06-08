@@ -9,8 +9,7 @@
 </head>
 <body>
 <div>
-    <h1>c
-        Customer-list</h1>
+    <h1>Customer-list</h1>
     <table>
         <tr>
             <th>Name</th>
