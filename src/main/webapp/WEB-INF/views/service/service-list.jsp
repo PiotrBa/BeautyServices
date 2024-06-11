@@ -30,7 +30,7 @@
             </tr>
         </c:forEach>
     </table><br>
-    <a href="services/add">Add New Service</a>
+    <a href="/services/add">Add New Service</a>
     <a href="/reservations">Appointments</a>
     <a href="/customers">Customers</a>
     <a href="/logout">Logout</a>
