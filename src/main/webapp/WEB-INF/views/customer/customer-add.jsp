@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Customer-add</title>
+    <title>customer-add</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 </head>
 <body>
