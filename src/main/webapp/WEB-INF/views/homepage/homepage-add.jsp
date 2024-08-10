@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage-add</title>
+    <title>Homepage add</title>
     <link rel="stylesheet" type="text/css" href="/css/style-add.css" />
 
 </head>
