@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage-edit</title>
+    <title>Homepage edit</title>
     <link rel="stylesheet" type="text/css" href="/css/style-edit.css" />
 </head>
 <body>
